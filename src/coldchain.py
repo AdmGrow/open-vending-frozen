@@ -1,4 +1,5 @@
-"""Lock vend if cabinet temperature is out of range.
+"""Si esta caliente o la puerta abierta, no vendo.
+Los numeros -18 y 4 los copie de internet, no se si estan bien.
 """
 from dataclasses import dataclass
 
