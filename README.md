@@ -1,9 +1,6 @@
 # open-vending-frozen
 
-Intento de expendedora de bebidas frias.
+Expendedora de bebidas frias. Temperatura / puerta en `src/coldchain.py`.
 
-Vi en un tutorial que hay que cuidar la temperatura. En `src/coldchain.py` puse que no venda si esta caliente o si la puerta esta abierta.
-
-No tengo hardware todavia. Solo el programa.
-
-MIT.
+Público. MIT. Lee `LEEME_LICENCIA.md`.
+Hacé tu versión. Podés ganar dinero con lo que armes. Sin garantía.
