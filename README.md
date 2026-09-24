@@ -1,5 +1,9 @@
 # open-vending-frozen
 
-Frozen / cold-chain drink vending. Temperature hold, defrost lockout.
+Intento de expendedora de bebidas frias.
 
-License: MIT. Public.
+Vi en un tutorial que hay que cuidar la temperatura. En `src/coldchain.py` puse que no venda si esta caliente o si la puerta esta abierta.
+
+No tengo hardware todavia. Solo el programa.
+
+MIT.
