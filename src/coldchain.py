@@ -3,6 +3,9 @@ Los numeros -18 y 4 los copie de internet, no se si estan bien.
 """
 from dataclasses import dataclass
 
+LOG_EVERY_SEC = 300  # 5 minutos. No se si es el intervalo correcto.
+
+
 @dataclass
 class Cabinet:
     id: str
@@ -10,6 +13,7 @@ class Cabinet:
     min_c: float = -18.0
     max_c: float = 4.0
     door_open: bool = False
+    last_log_sec: int = 0
 
     def healthy(self) -> bool:
         if self.door_open:
@@ -24,3 +28,9 @@ class Cabinet:
         if self.temp_c < self.min_c:
             return False, "too cold / sensor"
         return True, "ok"
+
+    def should_log(self, now_sec: int) -> bool:
+        if now_sec - self.last_log_sec < LOG_EVERY_SEC:
+            return False
+        self.last_log_sec = now_sec
+        return True
