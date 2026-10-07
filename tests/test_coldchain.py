@@ -10,3 +10,12 @@ def test_log_intervalo_y_puerta():
     ok, motivo = c.vend_allowed()
     assert ok is False
     assert motivo == "door open"
+
+
+def test_linea_de_log():
+    c = Cabinet("f1", temp_c=-12.0, door_open=False)
+    linea = c.log_line(300)
+    assert "f1" in linea
+    assert "-12.0C" in linea
+    assert "puerta=cerrada" in linea
+    assert "venta=True" in linea
