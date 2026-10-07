@@ -19,3 +19,13 @@ def test_linea_de_log():
     assert "-12.0C" in linea
     assert "puerta=cerrada" in linea
     assert "venta=True" in linea
+
+
+def test_caliente_no_vende():
+    c = Cabinet("f1", temp_c=6.0)
+    ok, motivo = c.vend_allowed()
+    assert ok is False
+    assert motivo == "too warm"
+    linea = c.log_line(0)
+    assert "venta=False" in linea
+    assert "too warm" in linea
