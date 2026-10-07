@@ -34,3 +34,8 @@ class Cabinet:
             return False
         self.last_log_sec = now_sec
         return True
+
+    def log_line(self, now_sec: int) -> str:
+        ok, motivo = self.vend_allowed()
+        puerta = "abierta" if self.door_open else "cerrada"
+        return f"{now_sec}s {self.id} {self.temp_c}C puerta={puerta} venta={ok} ({motivo})"
