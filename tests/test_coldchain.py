@@ -29,3 +29,10 @@ def test_caliente_no_vende():
     linea = c.log_line(0)
     assert "venta=False" in linea
     assert "too warm" in linea
+
+
+def test_muy_frio_no_vende():
+    c = Cabinet("f1", temp_c=-25.0)
+    ok, motivo = c.vend_allowed()
+    assert ok is False
+    assert motivo == "too cold / sensor"
